@@ -1,18 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-let counter = 0;
-
 class HotButton extends React.Component {
 
   constructor(props) {
     super(props);
     this.handleClick = this.handleClick.bind(this);
-    this.state = { isClicked: false };
+    this.state = { counter: 0 };
   }
 
   handleClick() {
-    this.setState({ isClicked: true });
+    this.setState({ counter: this.state.counter + 1 });
   }
 
   render() {
@@ -20,26 +18,22 @@ class HotButton extends React.Component {
     let btnColor = 'light-gray';
     let color = 'black';
 
-    if (this.state.isClicked) {
-      counter = counter + 1;
-    }
-
-    if ((counter > 2) && (counter < 6)) {
+    if ((this.state.counter > 2) && (this.state.counter < 6)) {
       btnColor = 'blue';
       color = 'white';
-    } else if ((counter > 5) && (counter < 9)) {
+    } else if ((this.state.counter > 5) && (this.state.counter < 9)) {
       btnColor = 'purple';
       color = 'white';
-    } else if ((counter > 8) && (counter < 12)) {
+    } else if ((this.state.counter > 8) && (this.state.counter < 12)) {
       btnColor = 'red';
       color = 'white';
-    } else if ((counter > 11) && (counter < 15)) {
+    } else if ((this.state.counter > 11) && (this.state.counter < 15)) {
       btnColor = 'orange';
       color = 'black';
-    } else if ((counter > 14) && (counter < 18)) {
+    } else if ((this.state.counter > 14) && (this.state.counter < 18)) {
       btnColor = 'yellow';
       color = 'black';
-    } else if (counter > 17) {
+    } else if (this.state.counter > 17) {
       btnColor = 'white';
       color = 'black';
     }

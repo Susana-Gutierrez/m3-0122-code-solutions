@@ -1,0 +1,48 @@
+/* stylelint-disable selector-class-pattern */
+.toggle {
+  position: relative;
+  display: inline-block;
+  width: 100px;
+  height: 52px;
+  border-radius: 30px;
+  border: 2px solid gray;
+}
+
+.toggle::after {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: white;
+  border: 0.1px solid gray;
+  transition: all 0.5s;
+}
+
+.toggleOn {
+  background-color: green;
+}
+
+.toggleOn::after {
+  left: 49px;
+}
+
+.toggleOff {
+  background-color: white;
+  top: 100px;
+}
+
+.toggleOff::after {
+  left: 1px;
+  transition: all 0.5s;
+}
+
+.checkbox {
+  display: none;
+}
+
+.toggleLable {
+  position: absolute;
+  padding-left: 150px;
+  padding-top: 20px;
+}

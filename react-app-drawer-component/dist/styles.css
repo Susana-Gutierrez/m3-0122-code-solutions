@@ -1,0 +1,84 @@
+/* stylelint-disable selector-class-pattern */
+* {
+  box-sizing: border-box;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+body {
+  font-family: "Courier New", Courier, monospace;
+}
+
+.fas {
+  font-size: 3rem;
+}
+
+.container {
+  display: flex;
+}
+
+.column {
+  padding-right: 200px;
+  flex-basis: calc(100% / 6);
+  border-right: black;
+  border-right-style: solid;
+  height: 100%;
+  background-color: white;
+}
+
+.positionIn {
+  position: fixed;
+  transform: translate(0%);
+  transition-duration: 0.5s;
+  left: 0;
+}
+
+.positionOut {
+  position: absolute;
+  transform: translate(-120%);
+  transition-duration: 0.5s;
+}
+
+.bar-position {
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  background: rgb(0 0 0 / 60%);
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  transform: translate(0%);
+  transition-duration: 0.5s;
+}
+
+.remove-overlay {
+  position: absolute;
+  background: rgb(0 0 0 / 60%);
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  transform: translate(-120%);
+  transition-duration: 0.5s;
+}
+
+.menu-title {
+  font-size: 2rem;
+  font-weight: bold;
+  padding-top: 1.2rem;
+  padding-left: 1rem;
+  padding-bottom: 0.5rem;
+}
+
+.menu {
+  font-size: 1.2rem;
+  padding-top: 1rem;
+  padding-left: 1rem;
+}
+
+.menu:hover {
+  cursor: pointer;
+}

@@ -17,15 +17,9 @@ function authorizationMiddleware(req, res, next) {
     if (!xAccessToken) {
       throw new ClientError(401, 'authentication required');
     }
-
-    try {
-      const payload = jwt.verify(xAccessToken, process.env.TOKEN_SECRET);
-      req.user = payload;
-    } catch (err) {
-      next(err);
-    }
+    const payload = jwt.verify(xAccessToken, process.env.TOKEN_SECRET);
+    req.user = payload;
     next();
-
   } catch (err) {
     next(err);
   }
